@@ -11,40 +11,28 @@
 класса - number, model.
 Добавить конструктор без параметров.
 */
-import java.util.Scanner;
 public class Main {
-
-    Scanner scanner = new Scanner(System.in);
-
-        System.out.print("Введите номер телефона: ");
-    int number = scanner.nextInt();
-
-        System.out.print("Введите модель телефона: ");
-    int model = scanner.nextInt();
-
-     System.out.print("Введите вес телефона: ");
-    int weight = scanner.nextInt();
-
-    Phone ph = new Phone();
-    ph.setName();
-
-    public static final int level = 1;
-
     public static void main(String[] args) {
-        People p = new People();
-        p.info();
-        p.setName("Alex");
-        p.setAge(30);
-        p.info();
 
-        People p2 = new People("Alex");
-        p2.info();
+        // 3 экземпляра класса Phone
+        Phone ph1 = new Phone("89110000000", "Huawei",190);
+        Phone ph2 = new Phone("89210000000", "Iphone");
+        Phone ph3 = new Phone("89090000000");
 
-        //People.counter = 8;
+       // вывод значений переменных класса Phone
+        ph1.info();
+        ph2.info();
+        ph3.info();
 
-        People p3 = new People("Alex", 55);
-        p3.info();
+        // Вывод имени и номера телефона
+       ph1.RecieveCall("Alex");
+        System.out.println(ph1.getNumber());
 
-        People.getCounter();
-    }
+        ph2.RecieveCall("Dan");
+        System.out.println(ph2.getNumber());
+
+        ph3.RecieveCall("Nik");
+        System.out.println(ph3.getNumber());
+
+     }
 }
