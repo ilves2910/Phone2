@@ -1,17 +1,5 @@
-public class Phone {
-      /* Д/з Класс Phone.
-        Создайте класс Phone, который содержит переменные number, model и weight.
-        Создайте три экземпляра этого класса.
-        Выведите на консоль значения их переменных.
-        Добавить в класс Phone методы: receiveCall, имеет один параметр – имя звонящего.
-        Выводит на консоль сообщение “Звонит {name}”. Метод getNumber – возвращает номер телефона.
-        Вызвать эти методы для каждого из объектов.
-        Добавить конструктор в класс Phone, который принимает на вход три параметра для инициализации
-        переменных класса - number, model и weight.
-        Добавить конструктор, который принимает на вход два параметра для инициализации переменных
-        класса - number, model.
-        Добавить конструктор без параметров.
-        */
+public abstract class Phone {
+
     private String number;
     private String model;
     private int weight;
@@ -31,22 +19,20 @@ public class Phone {
         this.weight = 0;
     }
 
-   // Конструктор с одним параметром
+    // Конструктор с одним параметром
     public Phone(String number) {
         this.number = "No number";
         this.model = "No model";
         this.weight = 0;
     }
 
-    // Метод, кто звонит
-    public void RecieveCall(String Name)
-    {
-         System.out.print("Звонит: " + Name + " ");
-    }
-
-    // Метод, возвращающий номер
     public String getNumber() {
         return number;
+    }
+
+    public void RecieveCall(String Name)
+    {
+        System.out.print("Звонит: " + Name + " ");
     }
 
     public void setNumber(String number) {
@@ -65,18 +51,10 @@ public class Phone {
         return weight;
     }
 
-    public void setWeight(int weight)
-        {
-            if (weight > 0) {
-                this.weight = weight;
-            }
-        }
-
-
-    void info()
-    {
-        System.out.printf("Number: %s \tModel: %s \tWeigth %d \n", number, model, weight);
+    public void setWeight(int weight) {
+        this.weight = weight;
     }
 
-
+    public abstract void info();
 }
+

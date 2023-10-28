@@ -11,28 +11,27 @@
 класса - number, model.
 Добавить конструктор без параметров.
 */
+
+/*Д/3 Доработать класс Phone. Сделать его абстрактным. Метод info() сделать абстрактным.
+Также добавить классы-наследники от Phone - SamsungPhone, XiaomiPhone и ApplePhone.
+Реализацию info() в каждом классе-наследнике. Создать объекты каждого класса-наследника и
+проверить метод Info().*/
 public class Main {
     public static void main(String[] args) {
 
-        // 3 экземпляра класса Phone
-        Phone ph1 = new Phone("89110000000", "Huawei",190);
-        Phone ph2 = new Phone("89210000000", "Iphone");
-        Phone ph3 = new Phone("89090000000");
+        SamsungPhone Samsung = new SamsungPhone("9110000000", "S8", 200);
+        XiaomiPhone Xiaomi = new XiaomiPhone("9210000000", "Mi5", 190);
+        ApplePhone Apple = new ApplePhone("909000000", "14Pro", 210);
 
-       // вывод значений переменных класса Phone
-        ph1.info();
-        ph2.info();
-        ph3.info();
+            // Вывод имени и номера телефона
+       Samsung.RecieveCall("Alex");
+       Samsung.info();
 
-        // Вывод имени и номера телефона
-       ph1.RecieveCall("Alex");
-        System.out.println(ph1.getNumber());
+        Xiaomi.RecieveCall("Dan");
+        Xiaomi.info();
 
-        ph2.RecieveCall("Dan");
-        System.out.println(ph2.getNumber());
+        Apple.RecieveCall("Nik");
+        Apple.info();
 
-        ph3.RecieveCall("Nik");
-        System.out.println(ph3.getNumber());
-
-     }
-}
+        }
+    }
